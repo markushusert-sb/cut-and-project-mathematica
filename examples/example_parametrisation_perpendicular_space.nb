@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[      7895,        197]
-NotebookOptionsPosition[      7411,        180]
-NotebookOutlinePosition[      7808,        196]
-CellTagsIndexPosition[      7765,        193]
+NotebookDataLength[      7950,        198]
+NotebookOptionsPosition[      7466,        181]
+NotebookOutlinePosition[      7863,        197]
+CellTagsIndexPosition[      7820,        194]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,7 +26,7 @@ Cell[BoxData[{
    RowBox[{"PrependTo", "[", 
     RowBox[{
     "$Path", ",", 
-     "\"\<~/tools/my_code/homogenise/mathematica_code/for_extern\>\""}], 
+     "\"\<~/tools/my_code/homogenise/mathematica_code/for_extern/code\>\""}], 
     "]"}], ";"}], 
   RowBox[{"(*", 
    RowBox[{"TODO", ":", 
@@ -109,8 +109,9 @@ Cell[BoxData[{
    3.948881107871497*^9, 3.948881168803623*^9}, 3.9493927870962057`*^9, {
    3.9501206851228724`*^9, 3.950120728212245*^9}, 3.950120763445218*^9, {
    3.950120837472575*^9, 3.9501208392705507`*^9}, {3.9501241463652143`*^9, 
-   3.950124180733741*^9}, {3.950124586810967*^9, 
-   3.950124588300256*^9}},ExpressionUUID->"b1adc732-b002-4750-a486-\
+   3.950124180733741*^9}, {3.950124586810967*^9, 3.950124588300256*^9}, {
+   3.950124980678712*^9, 
+   3.950124981729953*^9}},ExpressionUUID->"b1adc732-b002-4750-a486-\
 b3e59cc04b8c"],
 
 Cell[BoxData[
@@ -196,8 +197,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[576, 22, 3788, 91, 303, "Input",ExpressionUUID->"b1adc732-b002-4750-a486-b3e59cc04b8c"],
-Cell[4367, 115, 3028, 62, 336, "Output",ExpressionUUID->"927204ec-ddcb-433e-8545-fd958b03d28d"]
+Cell[576, 22, 3843, 92, 303, "Input",ExpressionUUID->"b1adc732-b002-4750-a486-b3e59cc04b8c"],
+Cell[4422, 116, 3028, 62, 336, "Output",ExpressionUUID->"927204ec-ddcb-433e-8545-fd958b03d28d"]
 }, Open  ]]
 }
 ]
