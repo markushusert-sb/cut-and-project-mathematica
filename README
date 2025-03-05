@@ -1,0 +1,6 @@
+in order to try out the code:
+	- install the latest version of mathematica
+	- clone this repository (to a directory referred to as <repo_dir> in the following)
+	- open one of the notebooks
+	- in the first line, insert <repo_dir>/code
+	- run the notebook
