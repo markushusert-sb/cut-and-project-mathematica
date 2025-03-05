@@ -1,0 +1,296 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     11318,        288]
+NotebookOptionsPosition[      9758,        253]
+NotebookOutlinePosition[     10155,        269]
+CellTagsIndexPosition[     10112,        266]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrependTo", "[", 
+    RowBox[{
+    "$Path", ",", 
+     "\"\<~/tools/my_code/homogenise/mathematica_code/for_extern\>\""}], 
+    "]"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"replace", " ", "by", " ", "your", " ", "location"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<Cutandpro`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Patterns`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Windows`\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.948851973274521*^9, 3.948852016792564*^9}, {
+  3.948865897846147*^9, 3.948865903214423*^9}, {3.948865943020143*^9, 
+  3.948865972022084*^9}, {3.948866033950254*^9, 3.9488660399722633`*^9}, {
+  3.948871649512375*^9, 3.948871649877767*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"11fc72d6-f2a5-4d6c-83cf-b64bea52c5dd"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"windowphysicalspace", "=", 
+   RowBox[{"quadraticwindow", "[", "20", "]"}]}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "square", " ", "window", " ", "of", " ", "given", " ", "sidelength", " ", 
+    "centered", " ", "on", " ", "origin"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candppenrose", "=", 
+   RowBox[{"candpmaster", "[", "\"\<penrose\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candpammann", "=", 
+   RowBox[{"candpmaster", "[", "\"\<ammann\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candpfibosquare", "=", 
+   RowBox[{"candpmaster", "[", "\"\<fibonaccisquares\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candphexagonal", "=", 
+   RowBox[{"candpmaster", "[", "\"\<hexagonalqp\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candpdodecagonal", "=", 
+   RowBox[{"candpmaster", "[", "\"\<dodecagonalqp\>\"", "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.9488520216602383`*^9, 3.948852067859651*^9}, {
+  3.9488521027247677`*^9, 3.9488521272394342`*^9}, {3.948852213060239*^9, 
+  3.948852252228512*^9}, {3.9488641030178347`*^9, 3.948864129694804*^9}, {
+  3.94886617828745*^9, 3.948866184106681*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"69c9905f-49f5-48ec-bf50-92b46c1dd9db"],
+
+Cell[CellGroupData[{
+
+Cell["Fibonacci-squares", "Section",
+ CellChangeTimes->{{3.948852276416388*^9, 
+  3.948852280182716*^9}},ExpressionUUID->"a74c7fd9-8e12-409b-b8d9-\
+f2c1a0ea1a77"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"points", "=", 
+    RowBox[{"docandppointsphys", "[", 
+     RowBox[{"candpfibosquare", ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<niter\>\"", "->", "5"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"points", ",", 
+   RowBox[{"AspectRatio", "->", "\"\<Automatic\>\""}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.9488522890715218`*^9, 3.948852298322345*^9}, {
+  3.9488612098471813`*^9, 3.948861222871581*^9}, {3.948861892812459*^9, 
+  3.948861902348783*^9}, {3.948866194942246*^9, 3.948866287179276*^9}, {
+  3.9488663189526043`*^9, 3.948866371532333*^9}, {3.948866402423932*^9, 
+  3.9488664326908207`*^9}, {3.948871383834751*^9, 3.9488713948782673`*^9}, {
+  3.948871435121052*^9, 3.9488714475107203`*^9}, {3.9488720442299967`*^9, 
+  3.948872052195685*^9}, {3.9488723479110937`*^9, 3.948872355399002*^9}, {
+  3.94887465269094*^9, 3.948874661933919*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"64d34ab9-8773-46b1-8117-f9cb312bb6f8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ammann-Beenker", "Section",
+ CellChangeTimes->{{3.948866457903076*^9, 
+  3.948866461054669*^9}},ExpressionUUID->"e147c92e-3cdf-4db5-8de2-\
+a03f55c8ad1e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"points", "=", 
+    RowBox[{"docandppointsphys", "[", 
+     RowBox[{"candpammann", ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<niter\>\"", "->", "5"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"points", ",", 
+   RowBox[{"AspectRatio", "->", "\"\<Automatic\>\""}]}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.948866441471534*^9, 3.9488664761392736`*^9, {3.948871665467746*^9, 
+   3.9488716681488743`*^9}, 3.948872061163394*^9, 3.9488723675598288`*^9, 
+   3.948874689590651*^9},
+ CellLabel->"In[13]:=",ExpressionUUID->"b9bf3aa6-cf6f-4957-8299-e3d02b5dd021"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Penrose", "Section",
+ CellChangeTimes->{{3.9488664931437817`*^9, 
+  3.948866493999057*^9}},ExpressionUUID->"703be28a-1ac2-4dc7-ae52-\
+d3fc58ae0c45"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"points", "=", 
+    RowBox[{"docandppointsphys", "[", 
+     RowBox[{"candppenrose", ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<niter\>\"", "->", "5"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"points", ",", 
+   RowBox[{"AspectRatio", "->", "\"\<Automatic\>\""}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.948866498985221*^9, 3.948866510176693*^9}, 
+   3.948871698593239*^9, {3.948871734896368*^9, 3.9488717363961067`*^9}, 
+   3.948872063663395*^9, 3.948872374002657*^9, 
+   3.948874692192391*^9},ExpressionUUID->"ac6409ff-da77-4823-93e0-\
+d8973a9c7ce4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Hexagonal", "Section",
+ CellChangeTimes->{{3.94886651957446*^9, 
+  3.948866523880196*^9}},ExpressionUUID->"0bebc3cd-cb28-4a78-8ad8-\
+704b56270d07"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"points", "=", 
+    RowBox[{"docandppointsphys", "[", 
+     RowBox[{"candphexagonal", ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<niter\>\"", "->", "5"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"points", ",", 
+   RowBox[{"AspectRatio", "->", "\"\<Automatic\>\""}]}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.948866537793396*^9, 3.948866544671571*^9}, 
+   3.948871707138698*^9, {3.948871786928944*^9, 3.94887178890967*^9}, 
+   3.948872074015696*^9, 3.9488723811575317`*^9, 
+   3.948874696880047*^9},ExpressionUUID->"12918814-3b5a-4495-8bd7-\
+37485405b8dc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dodecagonal", "Section",
+ CellChangeTimes->{{3.948866555187663*^9, 
+  3.948866556877412*^9}},ExpressionUUID->"ad42968b-93ef-4086-8b4a-\
+994c1cf875c6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"points", "=", 
+    RowBox[{"docandppointsphys", "[", 
+     RowBox[{"candpdodecagonal", ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<niter\>\"", "->", "5"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"points", ",", 
+   RowBox[{"AspectRatio", "->", "\"\<Automatic\>\""}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.948866564734918*^9, 3.9488665776917753`*^9}, {
+   3.94887182364539*^9, 3.9488718298851*^9}, 3.948872080699115*^9, 
+   3.94887242826825*^9, 3.9488747806154737`*^9},
+ CellLabel->"In[23]:=",ExpressionUUID->"26937f86-a78e-4dab-9f30-5cc53c52542e"]
+}, Open  ]]
+},
+WindowSize->{1383, 855},
+WindowMargins->{{-2.25, Automatic}, {Automatic, -22.5}},
+FrontEndVersion->"14.1 for Linux x86 (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"32fd122d-85be-4c88-b9fc-7dc7df63ce92"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 859, 18, 89, "Input",ExpressionUUID->"11fc72d6-f2a5-4d6c-83cf-b64bea52c5dd"],
+Cell[1416, 40, 1331, 32, 129, "Input",ExpressionUUID->"69c9905f-49f5-48ec-bf50-92b46c1dd9db"],
+Cell[CellGroupData[{
+Cell[2772, 76, 162, 3, 65, "Section",ExpressionUUID->"a74c7fd9-8e12-409b-b8d9-f2c1a0ea1a77"],
+Cell[2937, 81, 1498, 29, 69, "Input",ExpressionUUID->"64d34ab9-8773-46b1-8117-f9cb312bb6f8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4472, 115, 159, 3, 65, "Section",ExpressionUUID->"e147c92e-3cdf-4db5-8de2-a03f55c8ad1e"],
+Cell[4634, 120, 1125, 25, 69, "Input",ExpressionUUID->"b9bf3aa6-cf6f-4957-8299-e3d02b5dd021"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5796, 150, 154, 3, 65, "Section",ExpressionUUID->"703be28a-1ac2-4dc7-ae52-d3fc58ae0c45"],
+Cell[5953, 155, 1125, 25, 69, "Input",ExpressionUUID->"ac6409ff-da77-4823-93e0-d8973a9c7ce4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7115, 185, 153, 3, 65, "Section",ExpressionUUID->"0bebc3cd-cb28-4a78-8ad8-704b56270d07"],
+Cell[7271, 190, 1152, 26, 89, "Input",ExpressionUUID->"12918814-3b5a-4495-8bd7-37485405b8dc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8460, 221, 156, 3, 65, "Section",ExpressionUUID->"ad42968b-93ef-4086-8b4a-994c1cf875c6"],
+Cell[8619, 226, 1123, 24, 69, "Input",ExpressionUUID->"26937f86-a78e-4dab-9f30-5cc53c52542e"]
+}, Open  ]]
+}
+]
+*)
+

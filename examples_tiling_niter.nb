@@ -1,0 +1,267 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      9830,        259]
+NotebookOptionsPosition[      8274,        224]
+NotebookOutlinePosition[      8671,        240]
+CellTagsIndexPosition[      8628,        237]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrependTo", "[", 
+    RowBox[{
+    "$Path", ",", 
+     "\"\<~/tools/my_code/homogenise/mathematica_code/for_extern\>\""}], 
+    "]"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"replace", " ", "by", " ", "your", " ", "location"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<Cutandpro`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Patterns`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Windows`\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.948851973274521*^9, 3.948852016792564*^9}, {
+  3.948865897846147*^9, 3.948865903214423*^9}, {3.948865943020143*^9, 
+  3.948865972022084*^9}, {3.948866033950254*^9, 3.9488660399722633`*^9}, {
+  3.94887100376368*^9, 3.948871004147852*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"11fc72d6-f2a5-4d6c-83cf-b64bea52c5dd"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"candppenrose", "=", 
+   RowBox[{"candpmaster", "[", "\"\<penrose\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candpammann", "=", 
+   RowBox[{"candpmaster", "[", "\"\<ammann\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candpfibosquare", "=", 
+   RowBox[{"candpmaster", "[", "\"\<fibonaccisquares\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candphexagonal", "=", 
+   RowBox[{"candpmaster", "[", "\"\<hexagonalqp\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candpdodecagonal", "=", 
+   RowBox[{"candpmaster", "[", "\"\<dodecagonalqp\>\"", "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.9488520216602383`*^9, 3.948852067859651*^9}, {
+  3.9488521027247677`*^9, 3.9488521272394342`*^9}, {3.948852213060239*^9, 
+  3.948852252228512*^9}, {3.9488641030178347`*^9, 3.948864129694804*^9}, {
+  3.94886617828745*^9, 3.948866184106681*^9}, {3.9488706425001707`*^9, 
+  3.948870644121735*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"69c9905f-49f5-48ec-bf50-92b46c1dd9db"],
+
+Cell[CellGroupData[{
+
+Cell["Fibonacci-squares", "Section",
+ CellChangeTimes->{{3.948852276416388*^9, 
+  3.948852280182716*^9}},ExpressionUUID->"a74c7fd9-8e12-409b-b8d9-\
+f2c1a0ea1a77"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candpfibosquare", ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<niter\>\"", "->", "4"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "projection", " ", "of", " ", "hyperpoints", " ", "with", " ", "taxicab", 
+    " ", "norm", " ", "of", " ", "less", " ", "than", " ", "or", " ", "equal",
+     " ", "to", " ", "4"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.9488522890715218`*^9, 3.948852298322345*^9}, {
+  3.9488612098471813`*^9, 3.948861222871581*^9}, {3.948861892812459*^9, 
+  3.948861902348783*^9}, {3.948866194942246*^9, 3.948866287179276*^9}, {
+  3.9488663189526043`*^9, 3.948866371532333*^9}, {3.948866402423932*^9, 
+  3.9488664326908207`*^9}, {3.9488706492857037`*^9, 3.9488707222736692`*^9}, {
+  3.9488710369320374`*^9, 3.948871036963917*^9}, {3.949246484581409*^9, 
+  3.949246499903159*^9}, {3.9492465566074867`*^9, 3.949246557248888*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"64d34ab9-8773-46b1-8117-f9cb312bb6f8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ammann-Beenker", "Section",
+ CellChangeTimes->{{3.948866457903076*^9, 
+  3.948866461054669*^9}},ExpressionUUID->"e147c92e-3cdf-4db5-8de2-\
+a03f55c8ad1e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candpammann", ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<niter\>\"", "->", "4"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "projection", " ", "of", " ", "hyperpoints", " ", "with", " ", "taxicab", 
+    " ", "norm", " ", "of", " ", "less", " ", "than", " ", "or", " ", "equal",
+     " ", "to", " ", "4"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{
+  3.948866441471534*^9, 3.9488664761392736`*^9, {3.948870663050538*^9, 
+   3.94887066934923*^9}, {3.948871050887517*^9, 3.948871056811409*^9}, 
+   3.949246506205925*^9, 3.949246559838449*^9},
+ CellLabel->"In[12]:=",ExpressionUUID->"b9bf3aa6-cf6f-4957-8299-e3d02b5dd021"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Penrose", "Section",
+ CellChangeTimes->{{3.9488664931437817`*^9, 
+  3.948866493999057*^9}},ExpressionUUID->"703be28a-1ac2-4dc7-ae52-\
+d3fc58ae0c45"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candppenrose", ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<niter\>\"", "->", "4"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "projection", " ", "of", " ", "hyperpoints", " ", "with", " ", "taxicab", 
+    " ", "norm", " ", "of", " ", "less", " ", "than", " ", "or", " ", "equal",
+     " ", "to", " ", "4"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.948866498985221*^9, 3.948866510176693*^9}, {
+   3.9488710909046793`*^9, 3.948871093791932*^9}, 3.949246509042839*^9, 
+   3.949246561168985*^9},ExpressionUUID->"ac6409ff-da77-4823-93e0-\
+d8973a9c7ce4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Hexagonal", "Section",
+ CellChangeTimes->{{3.94886651957446*^9, 
+  3.948866523880196*^9}},ExpressionUUID->"0bebc3cd-cb28-4a78-8ad8-\
+704b56270d07"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candphexagonal", ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<niter\>\"", "->", "4"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "projection", " ", "of", " ", "hyperpoints", " ", "with", " ", "taxicab", 
+    " ", "norm", " ", "of", " ", "less", " ", "than", " ", "or", " ", "equal",
+     " ", "to", " ", "4"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.948866537793396*^9, 3.948866544671571*^9}, {
+   3.948871102617426*^9, 3.94887110688384*^9}, 3.94924651116206*^9, 
+   3.9492465626151342`*^9},ExpressionUUID->"12918814-3b5a-4495-8bd7-\
+37485405b8dc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dodecagonal", "Section",
+ CellChangeTimes->{{3.948866555187663*^9, 
+  3.948866556877412*^9}},ExpressionUUID->"ad42968b-93ef-4086-8b4a-\
+994c1cf875c6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candpdodecagonal", ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<niter\>\"", "->", "4"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "projection", " ", "of", " ", "hyperpoints", " ", "with", " ", "taxicab", 
+    " ", "norm", " ", "of", " ", "less", " ", "than", " ", "or", " ", "equal",
+     " ", "to", " ", "4"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.948866564734918*^9, 3.9488665776917753`*^9}, {
+   3.948871118803206*^9, 3.94887112535262*^9}, 
+   3.9492465712505074`*^9},ExpressionUUID->"26937f86-a78e-4dab-9f30-\
+5cc53c52542e"]
+}, Open  ]]
+},
+WindowSize->{1383, 855},
+WindowMargins->{{-2.25, Automatic}, {Automatic, -22.5}},
+FrontEndVersion->"14.1 for Linux x86 (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"32fd122d-85be-4c88-b9fc-7dc7df63ce92"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 858, 18, 89, "Input",ExpressionUUID->"11fc72d6-f2a5-4d6c-83cf-b64bea52c5dd"],
+Cell[1415, 40, 1097, 26, 109, "Input",ExpressionUUID->"69c9905f-49f5-48ec-bf50-92b46c1dd9db"],
+Cell[CellGroupData[{
+Cell[2537, 70, 162, 3, 65, "Section",ExpressionUUID->"a74c7fd9-8e12-409b-b8d9-f2c1a0ea1a77"],
+Cell[2702, 75, 1238, 24, 49, "Input",ExpressionUUID->"64d34ab9-8773-46b1-8117-f9cb312bb6f8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3977, 104, 159, 3, 65, "Section",ExpressionUUID->"e147c92e-3cdf-4db5-8de2-a03f55c8ad1e"],
+Cell[4139, 109, 932, 21, 49, "Input",ExpressionUUID->"b9bf3aa6-cf6f-4957-8299-e3d02b5dd021"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5108, 135, 154, 3, 65, "Section",ExpressionUUID->"703be28a-1ac2-4dc7-ae52-d3fc58ae0c45"],
+Cell[5265, 140, 865, 20, 49, "Input",ExpressionUUID->"ac6409ff-da77-4823-93e0-d8973a9c7ce4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6167, 165, 153, 3, 65, "Section",ExpressionUUID->"0bebc3cd-cb28-4a78-8ad8-704b56270d07"],
+Cell[6323, 170, 891, 21, 69, "Input",ExpressionUUID->"12918814-3b5a-4495-8bd7-37485405b8dc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7251, 196, 156, 3, 65, "Section",ExpressionUUID->"ad42968b-93ef-4086-8b4a-994c1cf875c6"],
+Cell[7410, 201, 848, 20, 49, "Input",ExpressionUUID->"26937f86-a78e-4dab-9f30-5cc53c52542e"]
+}, Open  ]]
+}
+]
+*)
+

@@ -1,0 +1,200 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      7708,        192]
+NotebookOptionsPosition[      7224,        175]
+NotebookOutlinePosition[      7621,        191]
+CellTagsIndexPosition[      7578,        188]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrependTo", "[", 
+    RowBox[{
+    "$Path", ",", 
+     "\"\<~/tools/my_code/homogenise/mathematica_code/for_extern\>\""}], 
+    "]"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"replace", " ", "by", " ", "your", " ", "location"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Cutandpro`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Windows`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Patterns`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candp", "=", 
+   RowBox[{"candpmaster", "[", "\"\<ammann\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"acceptancewindowvertices", "=", 
+   RowBox[{"topoly", "[", 
+    RowBox[{"candp", "[", "\"\<acceptancewindow\>\"", "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Show", "[", 
+    RowBox[{"GraphicsRow", "[", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Labeled", "[", 
+        RowBox[{
+         RowBox[{"Graphics", "[", 
+          RowBox[{"plottiling", "[", 
+           RowBox[{"docandptilingsmasterphys", "[", 
+            RowBox[{"candp", ",", 
+             RowBox[{"{", "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"x", ",", "y"}], "}"}], ",", 
+             RowBox[{"\"\<niter\>\"", "->", "5"}]}], "]"}], "]"}], "]"}], 
+         ",", "\"\<physical space\>\"", ",", "Bottom"}], "]"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Labeled", "[", 
+        RowBox[{
+         RowBox[{"Show", "[", 
+          RowBox[{
+           RowBox[{"Graphics", "[", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"EdgeForm", "[", "Black", "]"}], ",", 
+              RowBox[{"FaceForm", "[", "Gray", "]"}], ",", 
+              RowBox[{"Polygon", "[", "acceptancewindowvertices", "]"}]}], 
+             "}"}], "]"}], ",", 
+           RowBox[{"ListPlot", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"{", 
+               RowBox[{"x", ",", "y"}], "}"}], "}"}], ",", 
+             RowBox[{"PlotStyle", "->", 
+              RowBox[{"{", 
+               RowBox[{"Red", ",", 
+                RowBox[{"PointSize", "[", "0.02", "]"}]}], "}"}]}]}], "]"}]}],
+           "]"}], ",", "\"\<perpendicular space\>\"", ",", "Bottom"}], 
+        "]"}]}], "\[IndentingNewLine]", "}"}], "]"}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "0.85"}], ",", "0.85"}], "}"}], ",", "\[IndentingNewLine]", 
+   
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"y", ",", "0"}], "}"}], ",", 
+     RowBox[{"-", "0.85"}], ",", "0.85"}], "}"}]}], "\[IndentingNewLine]", 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.9488742671602697`*^9, 3.9488742732657547`*^9}, {
+   3.9488743250640717`*^9, 3.948874376148079*^9}, {3.948874554674049*^9, 
+   3.948874557197363*^9}, {3.948875453453684*^9, 3.948875453679191*^9}, {
+   3.9488755337113743`*^9, 3.948875570432596*^9}, {3.9488765720036983`*^9, 
+   3.948876630599533*^9}, {3.948877064833726*^9, 3.948877126222815*^9}, {
+   3.948880703953952*^9, 3.948880766762151*^9}, {3.948880916980945*^9, 
+   3.948880927263288*^9}, {3.948880964517405*^9, 3.948880973158895*^9}, {
+   3.948881107871497*^9, 3.948881168803623*^9}, 3.9493927870962057`*^9, {
+   3.9501206851228724`*^9, 3.950120728212245*^9}, 3.950120763445218*^9, {
+   3.950120837472575*^9, 3.9501208392705507`*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"b1adc732-b002-4750-a486-b3e59cc04b8c"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = 
+    0.44600000000000006`, $CellContext`y$$ = -0.1479999999999999, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`x$$], 0}, -0.85, 0.85, ControlType -> Manipulator}, {{
+       Hold[$CellContext`y$$], 0}, -0.85, 0.85, ControlType -> Manipulator}}, 
+    Typeset`size$$ = {384., {102.7125, 108.3375}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`x$$ = 0, $CellContext`y$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> Show[
+        GraphicsRow[{
+          Labeled[
+           Graphics[
+            Patterns`plottiling[
+             
+             Cutandpro`docandptilingsmasterphys[$CellContext`candp, {}, \
+{$CellContext`x$$, $CellContext`y$$}, "niter" -> 5]]], "physical space", 
+           Bottom], 
+          Labeled[
+           Show[
+            Graphics[{
+              EdgeForm[Black], 
+              FaceForm[Gray], 
+              Polygon[$CellContext`acceptancewindowvertices]}], 
+            
+            ListPlot[{{$CellContext`x$$, $CellContext`y$$}}, 
+             PlotStyle -> {Red, 
+               PointSize[0.02]}]], "perpendicular space", Bottom]}]], 
+      "Specifications" :> {{{$CellContext`x$$, 0}, -0.85, 
+         0.85}, {{$CellContext`y$$, 0}, -0.85, 0.85}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{429.1, {156.828125, 162.453125}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.9488755633079844`*^9, 3.94887557130921*^9}, 
+   3.948876591031473*^9, 3.9488770996407213`*^9, {3.948880719269073*^9, 
+   3.948880761658289*^9}, {3.948880919018364*^9, 3.948880928461549*^9}, {
+   3.948880965514181*^9, 3.948880974348353*^9}, {3.948881157911852*^9, 
+   3.948881170018723*^9}, 3.949392538235889*^9, 3.949392797106675*^9, 
+   3.950120676346187*^9, 3.950120735063204*^9, 3.950120766938506*^9, {
+   3.950120832353764*^9, 3.950120841265133*^9}},
+ CellLabel->"Out[33]=",ExpressionUUID->"927204ec-ddcb-433e-8545-fd958b03d28d"]
+}, Open  ]]
+},
+WindowSize->{1383, 855},
+WindowMargins->{{-2.25, Automatic}, {Automatic, -22.5}},
+FrontEndVersion->"14.1 for Linux x86 (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"84485ede-2fa8-46e9-9443-6d43b16a1fea"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 3601, 86, 303, "Input",ExpressionUUID->"b1adc732-b002-4750-a486-b3e59cc04b8c"],
+Cell[4180, 110, 3028, 62, 336, "Output",ExpressionUUID->"927204ec-ddcb-433e-8545-fd958b03d28d"]
+}, Open  ]]
+}
+]
+*)
+

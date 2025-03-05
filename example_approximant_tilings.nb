@@ -1,0 +1,189 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      6337,        181]
+NotebookOptionsPosition[      5537,        159]
+NotebookOutlinePosition[      5935,        175]
+CellTagsIndexPosition[      5892,        172]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrependTo", "[", 
+    RowBox[{
+    "$Path", ",", 
+     "\"\<~/tools/my_code/homogenise/mathematica_code/for_extern\>\""}], 
+    "]"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"replace", " ", "by", " ", "your", " ", "location"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Get", "[", "\"\<Cutandpro`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Patterns`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Windows`\>\"", "]"}]}], "Input",
+ CellChangeTimes->{3.949380234922553*^9},
+ CellLabel->"In[1]:=",ExpressionUUID->"93824db7-749e-44af-8b4c-7cde92e64ebc"],
+
+Cell[CellGroupData[{
+
+Cell["Construct geometry of unitcell", "Section",
+ CellChangeTimes->{{3.949381617673897*^9, 
+  3.9493816240009403`*^9}},ExpressionUUID->"a6ef5de7-51a7-4b6a-b7f0-\
+37851b765d0e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"candp", "=", 
+   RowBox[{"candpmaster", "[", 
+    RowBox[{"\"\<ammannapproximantduneau\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"unitcellvertices", "=", 
+  RowBox[{
+  "approximantunitcellvertices", "[", "candp", "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"window", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "+", "1"}]}], 
+       RowBox[{"(*", 
+        RowBox[{
+        "we", " ", "make", " ", "the", " ", "window", " ", "bigger", " ", 
+         "to", " ", "cover", " ", "a", " ", "bit", " ", "more", " ", "than", 
+         " ", "just", " ", "the", " ", "unitcell"}], "*)"}], "}"}], "&"}], 
+     ")"}], "/@", 
+    RowBox[{"towindow", "[", "unitcellvertices", "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tiling", "=", 
+   RowBox[{"restricttowind", "[", 
+    RowBox[{"window", ",", 
+     RowBox[{"docandptilingsmasterphys", "[", 
+      RowBox[{"candp", ",", "window", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"plottiling", "[", "tiling", "]"}], ",", 
+    RowBox[{"FaceForm", "[", "None", "]"}], ",", 
+    RowBox[{"EdgeForm", "[", "Red", "]"}], ",", 
+    RowBox[{"Polygon", "[", "unitcellvertices", "]"}]}], "}"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.94938024865952*^9, 3.9493803028559227`*^9}, {
+   3.949380333823505*^9, 3.9493804325953417`*^9}, {3.949380489674078*^9, 
+   3.949380508097063*^9}, {3.949380547620256*^9, 3.949380581092664*^9}, {
+   3.9493806824445963`*^9, 3.9493808191021357`*^9}, {3.949380856227562*^9, 
+   3.949380868166932*^9}, 3.949380950825308*^9},
+ CellLabel->"In[5]:=",ExpressionUUID->"b3c65602-36bf-449c-8c02-ebcdc99fef25"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Increasing size of unitcell", "Section",
+ CellChangeTimes->{{3.94938061528135*^9, 
+  3.94938063040283*^9}},ExpressionUUID->"6b9eac15-10a3-4be8-8283-\
+7291655aa017"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"candpbetter", "=", 
+   RowBox[{"candpmaster", "[", 
+    RowBox[{"\"\<ammannapproximantduneau\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "3"}], "}"}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"unitcellvertices", "=", 
+   RowBox[{"approximantunitcellvertices", "[", "candpbetter", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"window", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], ",", 
+        RowBox[{
+         RowBox[{"#", "[", 
+          RowBox[{"[", "2", "]"}], "]"}], "+", "2"}]}], 
+       RowBox[{"(*", 
+        RowBox[{
+        "we", " ", "make", " ", "the", " ", "window", " ", "bigger", " ", 
+         "to", " ", "cover", " ", "a", " ", "bit", " ", "more", " ", "than", 
+         " ", "just", " ", "the", " ", "unitcell"}], "*)"}], "}"}], "&"}], 
+     ")"}], "/@", 
+    RowBox[{"towindow", "[", "unitcellvertices", "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"tiling", "=", 
+   RowBox[{"restricttowind", "[", 
+    RowBox[{"window", ",", 
+     RowBox[{"docandptilingsmasterphys", "[", 
+      RowBox[{"candpbetter", ",", "window", ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"plottiling", "[", "tiling", "]"}], ",", 
+    RowBox[{"FaceForm", "[", "None", "]"}], ",", 
+    RowBox[{"EdgeForm", "[", "Red", "]"}], ",", 
+    RowBox[{"Polygon", "[", "unitcellvertices", "]"}]}], "}"}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.949380635148143*^9, 3.9493806489261093`*^9}, {
+  3.949380907156844*^9, 3.949380946426464*^9}},
+ CellLabel->"In[71]:=",ExpressionUUID->"b91883de-c239-4f8d-8ec4-26a015f297f4"]
+}, Open  ]]
+},
+WindowSize->{606, 679.5},
+WindowMargins->{{-2.25, Automatic}, {Automatic, -22.5}},
+FrontEndVersion->"14.1 for Linux x86 (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"55e592bc-a297-4b69-bd2e-f6939f1884cd"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 640, 15, 129, "Input",ExpressionUUID->"93824db7-749e-44af-8b4c-7cde92e64ebc"],
+Cell[CellGroupData[{
+Cell[1219, 39, 177, 3, 65, "Section",ExpressionUUID->"a6ef5de7-51a7-4b6a-b7f0-37851b765d0e"],
+Cell[1399, 44, 2049, 52, 213, "Input",ExpressionUUID->"b3c65602-36bf-449c-8c02-ebcdc99fef25"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3485, 101, 170, 3, 65, "Section",ExpressionUUID->"6b9eac15-10a3-4be8-8283-7291655aa017"],
+Cell[3658, 106, 1863, 50, 213, "Input",ExpressionUUID->"b91883de-c239-4f8d-8ec4-26a015f297f4"]
+}, Open  ]]
+}
+]
+*)
+

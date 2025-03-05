@@ -1,0 +1,398 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     15320,        390]
+NotebookOptionsPosition[     13533,        351]
+NotebookOutlinePosition[     13930,        367]
+CellTagsIndexPosition[     13887,        364]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"PrependTo", "[", 
+    RowBox[{
+    "$Path", ",", 
+     "\"\<~/tools/my_code/homogenise/mathematica_code/for_extern\>\""}], 
+    "]"}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"replace", " ", "by", " ", "your", " ", "location"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Cutandpro`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Patterns`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Needs", "[", "\"\<Windows`\>\"", "]"}]}], "Input",
+ CellChangeTimes->{{3.948851973274521*^9, 3.948852016792564*^9}, {
+  3.948865897846147*^9, 3.948865903214423*^9}, {3.948865943020143*^9, 
+  3.948865972022084*^9}, {3.948866033950254*^9, 3.9488660399722633`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"11fc72d6-f2a5-4d6c-83cf-b64bea52c5dd"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"windowphysicalspace", "=", 
+   RowBox[{"quadraticwindow", "[", "20", "]"}]}], 
+  RowBox[{"(*", 
+   RowBox[{
+   "square", " ", "window", " ", "of", " ", "given", " ", "sidelength", " ", 
+    "centered", " ", "on", " ", "origin"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candppenrose", "=", 
+   RowBox[{"candpmaster", "[", "\"\<penrose\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candpammann", "=", 
+   RowBox[{"candpmaster", "[", "\"\<ammann\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candpfibosquare", "=", 
+   RowBox[{"candpmaster", "[", "\"\<fibonaccisquares\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candphexagonal", "=", 
+   RowBox[{"candpmaster", "[", "\"\<hexagonalqp\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"candpdodecagonal", "=", 
+   RowBox[{"candpmaster", "[", "\"\<dodecagonalqp\>\"", "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.9488520216602383`*^9, 3.948852067859651*^9}, {
+  3.9488521027247677`*^9, 3.9488521272394342`*^9}, {3.948852213060239*^9, 
+  3.948852252228512*^9}, {3.9488641030178347`*^9, 3.948864129694804*^9}, {
+  3.94886617828745*^9, 3.948866184106681*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"69c9905f-49f5-48ec-bf50-92b46c1dd9db"],
+
+Cell[CellGroupData[{
+
+Cell["Fibonacci-squares", "Section",
+ CellChangeTimes->{{3.948852276416388*^9, 
+  3.948852280182716*^9}},ExpressionUUID->"a74c7fd9-8e12-409b-b8d9-\
+f2c1a0ea1a77"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tilingraw", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candpfibosquare", ",", "windowphysicalspace", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<minimaltiling\>\"", "->", "True"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"restricttowind", "[", 
+     RowBox[{"windowphysicalspace", ",", "tilingraw"}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"on", " ", "prend", " ", 
+    RowBox[{"l", "'"}], "intersection", " ", "de", " ", "chaque", " ", 
+    "tuile", " ", "avec", " ", "windowphysicalspace"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.9488522890715218`*^9, 3.948852298322345*^9}, {
+  3.9488612098471813`*^9, 3.948861222871581*^9}, {3.948861892812459*^9, 
+  3.948861902348783*^9}, {3.948866194942246*^9, 3.948866287179276*^9}, {
+  3.9488663189526043`*^9, 3.948866371532333*^9}, {3.948866402423932*^9, 
+  3.9488664326908207`*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"64d34ab9-8773-46b1-8117-f9cb312bb6f8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Ammann-Beenker", "Section",
+ CellChangeTimes->{{3.948866457903076*^9, 
+  3.948866461054669*^9}},ExpressionUUID->"e147c92e-3cdf-4db5-8de2-\
+a03f55c8ad1e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tilingraw", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candpammann", ",", "windowphysicalspace", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<minimaltiling\>\"", "->", "True"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"restricttowind", "[", 
+     RowBox[{"windowphysicalspace", ",", "tilingraw"}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"on", " ", "prend", " ", 
+    RowBox[{"l", "'"}], "intersection", " ", "de", " ", "chaque", " ", 
+    "tuile", " ", "avec", " ", "windowphysicalspace"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{3.948866441471534*^9, 3.9488664761392736`*^9},
+ CellLabel->"In[17]:=",ExpressionUUID->"b9bf3aa6-cf6f-4957-8299-e3d02b5dd021"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Penrose", "Section",
+ CellChangeTimes->{{3.9488664931437817`*^9, 
+  3.948866493999057*^9}},ExpressionUUID->"703be28a-1ac2-4dc7-ae52-\
+d3fc58ae0c45"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tilingraw", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candppenrose", ",", "windowphysicalspace", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<minimaltiling\>\"", "->", "True"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"restricttowind", "[", 
+     RowBox[{"windowphysicalspace", ",", "tilingraw"}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"on", " ", "prend", " ", 
+    RowBox[{"l", "'"}], "intersection", " ", "de", " ", "chaque", " ", 
+    "tuile", " ", "avec", " ", "windowphysicalspace"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.948866498985221*^9, 3.948866510176693*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"ac6409ff-da77-4823-93e0-d8973a9c7ce4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Hexagonal", "Section",
+ CellChangeTimes->{{3.94886651957446*^9, 
+  3.948866523880196*^9}},ExpressionUUID->"0bebc3cd-cb28-4a78-8ad8-\
+704b56270d07"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tilingraw", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candphexagonal", ",", "windowphysicalspace", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<minimaltiling\>\"", "->", "True"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"restricttowind", "[", 
+     RowBox[{"windowphysicalspace", ",", "tilingraw"}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"on", " ", "prend", " ", 
+    RowBox[{"l", "'"}], "intersection", " ", "de", " ", "chaque", " ", 
+    "tuile", " ", "avec", " ", "windowphysicalspace"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], 
+  "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.948866537793396*^9, 3.948866544671571*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"12918814-3b5a-4495-8bd7-37485405b8dc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dodecagonal", "Section",
+ CellChangeTimes->{{3.948866555187663*^9, 
+  3.948866556877412*^9}},ExpressionUUID->"ad42968b-93ef-4086-8b4a-\
+994c1cf875c6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"tilingraw", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candpdodecagonal", ",", "windowphysicalspace", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<minimaltiling\>\"", "->", "True"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"restricttowind", "[", 
+     RowBox[{"windowphysicalspace", ",", "tilingraw"}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"on", " ", "prend", " ", 
+    RowBox[{"l", "'"}], "intersection", " ", "de", " ", "chaque", " ", 
+    "tuile", " ", "avec", " ", "windowphysicalspace"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.948866564734918*^9, 3.9488665776917753`*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"26937f86-a78e-4dab-9f30-5cc53c52542e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Arbitrary projector matrix", "Section",
+ CellChangeTimes->{{3.9501217068492823`*^9, 
+  3.950121712870129*^9}},ExpressionUUID->"274f0cd7-3739-4b80-8b84-\
+ad9e0c49aa12"],
+
+Cell[BoxData[{
+ RowBox[{"projector", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "0.270789"}], ",", "0.652781", ",", 
+      RowBox[{"-", "0.585508"}], ",", 
+      RowBox[{"-", "0.36897"}], ",", 
+      RowBox[{"-", "0.146942"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "0.701684"}], ",", 
+      RowBox[{"-", "0.230259"}], ",", 
+      RowBox[{"-", "0.231167"}], ",", "0.241184", ",", "0.585673"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{"0.474652", ",", "0.396854", ",", 
+      RowBox[{"-", "0.273316"}], ",", "0.648128", ",", "0.349915"}], "}"}], 
+    ",", 
+    RowBox[{"{", 
+     RowBox[{"0.454841", ",", 
+      RowBox[{"-", "0.329416"}], ",", 
+      RowBox[{"-", "0.355483"}], ",", 
+      RowBox[{"-", "0.552719"}], ",", "0.50273"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "0.0462314"}], ",", "0.504826", ",", "0.634565", ",", 
+      RowBox[{"-", "0.283059"}], ",", "0.510115"}], "}"}]}], "}"}]}], "\n", 
+ RowBox[{
+  RowBox[{"candp", "=", 
+   RowBox[{"generalcutandproject", "[", "projector", "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tilingraw", "=", 
+    RowBox[{"docandptilingsmasterphys", "[", 
+     RowBox[{"candp", ",", "windowphysicalspace", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+      RowBox[{"\"\<minimaltiling\>\"", "->", "True"}]}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Patch", " ", "du", " ", "pavage", " ", "projet\[EAcute]", " ", "avec", 
+     " ", "le", " ", "compact", " ", "set", " ", "windowphysicalspace", " ", 
+     "dans", " ", "le", " ", "sense", " ", "de", " ", "section", " ", "5.1", 
+     RowBox[{".1", ".", " ", "baake"}], " ", "et", " ", "grimm"}], ",", " ", 
+    RowBox[{"aperiodic", " ", "order"}]}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tiling", "=", 
+    RowBox[{"restricttowind", "[", 
+     RowBox[{"windowphysicalspace", ",", "tilingraw"}], "]"}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"on", " ", "prend", " ", 
+    RowBox[{"l", "'"}], "intersection", " ", "de", " ", "chaque", " ", 
+    "tuile", " ", "avec", " ", "windowphysicalspace"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "[", 
+  RowBox[{"plottiling", "[", "tiling", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.950121764330937*^9, 3.9501217810716143`*^9}, {
+  3.9501221326362677`*^9, 3.950122169585197*^9}, {3.95012235931306*^9, 
+  3.9501223609468184`*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"50d22fd5-70ee-4bba-86b8-75f1b93e81fd"]
+}, Open  ]]
+},
+WindowSize->{1383, 855},
+WindowMargins->{{-2.25, Automatic}, {Automatic, -22.5}},
+FrontEndVersion->"14.1 for Linux x86 (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"32fd122d-85be-4c88-b9fc-7dc7df63ce92"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 812, 17, 89, "Input",ExpressionUUID->"11fc72d6-f2a5-4d6c-83cf-b64bea52c5dd"],
+Cell[1369, 39, 1331, 32, 129, "Input",ExpressionUUID->"69c9905f-49f5-48ec-bf50-92b46c1dd9db"],
+Cell[CellGroupData[{
+Cell[2725, 75, 162, 3, 65, "Section",ExpressionUUID->"a74c7fd9-8e12-409b-b8d9-f2c1a0ea1a77"],
+Cell[2890, 80, 1609, 34, 89, "Input",ExpressionUUID->"64d34ab9-8773-46b1-8117-f9cb312bb6f8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4536, 119, 159, 3, 65, "Section",ExpressionUUID->"e147c92e-3cdf-4db5-8de2-a03f55c8ad1e"],
+Cell[4698, 124, 1355, 30, 89, "Input",ExpressionUUID->"b9bf3aa6-cf6f-4957-8299-e3d02b5dd021"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6090, 159, 154, 3, 65, "Section",ExpressionUUID->"703be28a-1ac2-4dc7-ae52-d3fc58ae0c45"],
+Cell[6247, 164, 1356, 30, 89, "Input",ExpressionUUID->"ac6409ff-da77-4823-93e0-d8973a9c7ce4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7640, 199, 153, 3, 65, "Section",ExpressionUUID->"0bebc3cd-cb28-4a78-8ad8-704b56270d07"],
+Cell[7796, 204, 1384, 31, 109, "Input",ExpressionUUID->"12918814-3b5a-4495-8bd7-37485405b8dc"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9217, 240, 156, 3, 65, "Section",ExpressionUUID->"ad42968b-93ef-4086-8b4a-994c1cf875c6"],
+Cell[9376, 245, 1362, 30, 89, "Input",ExpressionUUID->"26937f86-a78e-4dab-9f30-5cc53c52542e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10775, 280, 173, 3, 65, "Section",ExpressionUUID->"274f0cd7-3739-4b80-8b84-ad9e0c49aa12"],
+Cell[10951, 285, 2566, 63, 149, "Input",ExpressionUUID->"50d22fd5-70ee-4bba-86b8-75f1b93e81fd"]
+}, Open  ]]
+}
+]
+*)
+
