@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[      7708,        192]
-NotebookOptionsPosition[      7224,        175]
-NotebookOutlinePosition[      7621,        191]
-CellTagsIndexPosition[      7578,        188]
+NotebookDataLength[      7895,        197]
+NotebookOptionsPosition[      7411,        180]
+NotebookOutlinePosition[      7808,        196]
+CellTagsIndexPosition[      7765,        193]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,8 +29,11 @@ Cell[BoxData[{
      "\"\<~/tools/my_code/homogenise/mathematica_code/for_extern\>\""}], 
     "]"}], ";"}], 
   RowBox[{"(*", 
-   RowBox[{"replace", " ", "by", " ", "your", " ", "location"}], 
-   "*)"}]}], "\[IndentingNewLine]", 
+   RowBox[{"TODO", ":", 
+    RowBox[{
+     RowBox[{"replace", " ", "by"}], " ", "<", 
+     RowBox[{"your_local", "_git", "_repository"}], ">", 
+     RowBox[{"/", "code"}]}]}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"Needs", "[", "\"\<Cutandpro`\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"Needs", "[", "\"\<Windows`\>\"", "]"}], "\[IndentingNewLine]", 
  RowBox[{"Needs", "[", "\"\<Patterns`\>\"", "]"}], "\[IndentingNewLine]", 
@@ -105,8 +108,10 @@ Cell[BoxData[{
    3.948880927263288*^9}, {3.948880964517405*^9, 3.948880973158895*^9}, {
    3.948881107871497*^9, 3.948881168803623*^9}, 3.9493927870962057`*^9, {
    3.9501206851228724`*^9, 3.950120728212245*^9}, 3.950120763445218*^9, {
-   3.950120837472575*^9, 3.9501208392705507`*^9}},
- CellLabel->"In[27]:=",ExpressionUUID->"b1adc732-b002-4750-a486-b3e59cc04b8c"],
+   3.950120837472575*^9, 3.9501208392705507`*^9}, {3.9501241463652143`*^9, 
+   3.950124180733741*^9}, {3.950124586810967*^9, 
+   3.950124588300256*^9}},ExpressionUUID->"b1adc732-b002-4750-a486-\
+b3e59cc04b8c"],
 
 Cell[BoxData[
  TagBox[
@@ -191,8 +196,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[576, 22, 3601, 86, 303, "Input",ExpressionUUID->"b1adc732-b002-4750-a486-b3e59cc04b8c"],
-Cell[4180, 110, 3028, 62, 336, "Output",ExpressionUUID->"927204ec-ddcb-433e-8545-fd958b03d28d"]
+Cell[576, 22, 3788, 91, 303, "Input",ExpressionUUID->"b1adc732-b002-4750-a486-b3e59cc04b8c"],
+Cell[4367, 115, 3028, 62, 336, "Output",ExpressionUUID->"927204ec-ddcb-433e-8545-fd958b03d28d"]
 }, Open  ]]
 }
 ]
