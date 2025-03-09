@@ -175,9 +175,9 @@ neighbouringpointsoutwardcolumn[
      x_Integer /; x < 0 :> {-1, 0}, 0 -> {1, 0, -1}}, {1}]]
 defaultshiftvector[candp_Association,internalshift_]:=(internalshift /. {Null -> (0 &) /@ Range[candp["hyperdim"]-candp["physdim"]]})
 Options[docandppoints] = {"niter"->Infinity};
-docandppoints[candp_Association, windowphysical : polytopepattern, internalshift : vecpattern : Null,OptionsPattern[]] := (
+docandppoints[candp_Association, windowphysical : {}, internalshift : vecpattern : Null,OptionsPattern[]] := (
 	If[!candp["isinwindowQ"][(0 &) /@ Range[candp["hyperdim"]], candp["projectperpendicular"], defaultshiftvector[candp,internalshift],candp["acceptancewindow"]],
-		Throw["choose shift in perpendicularspace that is inside of the acceptance window"]];
+		Throw["2 choose shift in perpendicularspace that is inside of the acceptance window"]];
 	If[Length[windowphysical]>0 && OptionValue["niter"]!=Infinity,Throw["choose either a polytope or the number of iterations, not both"]];
 	({{(0 &) /@ Range[candp["hyperdim"]]}, {},OptionValue["niter"]+1} //.
 		({hyperlatticepoints : {vecpattern ..}, acceptedpoints : {vecpattern ...},remainingrounds_/;remainingrounds>0}) :>
@@ -185,7 +185,7 @@ docandppoints[candp_Association, windowphysical : polytopepattern, internalshift
 				Fold[
 					Function[{data(*data is list of length 2:{hyperpoints_to_check in next iteration,accepted hyperpoints}*), hyperpoint},
 						(If[
-							candp["isinwindowQ"][hyperpoint,candp["projectperpendicular"], defaultshiftvector[candp,internalshift],candp["acceptancewindow"]] && isinwindow[windowphysical, candp["projectphysical"][hyperpoint]],
+							candp["isinwindowQ"][hyperpoint,candp["projectperpendicular"], defaultshiftvector[candp,internalshift],candp["acceptancewindow"]],
 							{Join[data[[1]],neighbouringpointsoutwardedge[hyperpoint]], Append[data[[2]], (*candp["projectphysical"]]hyperpoint]*)hyperpoint]},
          			data
 						])
@@ -194,6 +194,7 @@ docandppoints[candp_Association, windowphysical : polytopepattern, internalshift
       		DeleteDuplicates[hyperlatticepoints]],
 				remainingrounds-1]
 	)[[2]])
+docandppoints[candp_Association, windowphysical : polytopepattern, internalshift : vecpattern : Null,OptionsPattern[]] := (Select[hypertilingtohyperpoints[docandptilingsmasterhyper[candp,windowphysical,internalshift,"checkforfilledwindow"->True,"niter"->OptionValue["niter"]]],(isinonwindow[windowphysical, candp["projectphysical"][#]]&)])
 Options[docandppointssmarthyper] = {"niter"->Infinity};
 docandppointssmarthyper[candp_Association, windowphysical : polytopepattern, internalshift : vecpattern : Null,OptionsPattern[]] := DeleteDuplicates[({{(0 &) /@ Range[candp["hyperdim"]]}, {},OptionValue["niter"]+1} //. ({hyperlatticepoints : {vecpattern ..}, acceptedpoints : {vecpattern ...},remainingrounds_/;remainingrounds>0}) :> 
      Append[Fold[Function[{data, hyperpoint}, (If[isinwindow[windowphysical, candp["projectphysical"][hyperpoint]],
