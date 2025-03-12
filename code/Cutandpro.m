@@ -98,7 +98,7 @@ findpolygons[hyperpoints_(* : {vecpattern ..}should be :{vecpattern..}, bu patte
       If[SubsetQ[hyperpoints, translatedtile], translatedtile, Unevaluated@Sequence[]]]
 		], hyperpoints, possiblehypertiles, 1], 1]
 	]
-approximantunitcelltiling[candp_Association,internalshift : vecpattern ,factor:_?IntegerQ:1]:=restricttowind[approximantunitcellwindow[candp,factor],docandptilingsmasterphys[candp,approximantunitcellwindow[candp,factor],internalshift]]
+approximantunitcelltiling[candp_Association,internalshift : vecpattern ,factor:_?IntegerQ:1]:=restricttowindow[approximantunitcellwindow[candp,factor],docandptilingsmasterphys[candp,approximantunitcellwindow[candp,factor],internalshift]]
 approximantunitcellvertices[candp_Association,factor:_?IntegerQ:1]:=(
 	If[!KeyExistsQ[candp,"periods"],Throw["unitcells only exist for approximant modell sets"]];
 	N[candp["projectphysical"]/@(factor*{
@@ -279,7 +279,7 @@ checkandfiltertiling[candp_Association, windowphysical:polytopepattern,hypertili
 			If[
 				(OptionValue["checkforfilledwindow"]),
 				(
-				restricttowindfilled[windowphysical,phystiling](*we use restricttowindfilled only to check not to do the restriction*)
+				restricttowindowfilled[windowphysical,phystiling](*we use restricttowindowfilled only to check not to do the restriction*)
 				)
 			]
 		)];
@@ -379,7 +379,7 @@ filterhypertilingbysubstructure[hypertiling : {{vecpattern ..} ..},subsstructure
 Options[docandptilingsphyssubstructure] = {"niter"->Infinity};
 docandptilingsphyssubstructure[candp_Association, windowphysical : polytopepattern,substructure:{vecpattern..},internalshift : vecpattern : Null,OptionsPattern[]] :=
 Module[{hypertiling},
-	({#[[1]],Flatten[#[[2;;]],1]}&)[restricttowind[
+	({#[[1]],Flatten[#[[2;;]],1]}&)[restricttowindow[
 		windowphysical,
 		Map[(candp["projectphysical"]),
 			filterhypertilingbysubstructure[

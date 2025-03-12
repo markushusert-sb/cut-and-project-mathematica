@@ -220,7 +220,7 @@ patternsmaster[pattern_String,params_:{},shift:vecpattern:{0,0},perpshift:vecpat
 				toindexformpython[
 					applyboundarylayers[
 						pretreatconcavepolygons[
-							N[restricttowind[params[[1]],
+							N[restricttowindow[params[[1]],
 								docandptilingsmasterphys[candpmaster[pattern,params[[3]]],params[[1]],perpshift,"hyperpointsfile"->OptionValue["hyperpointsfile"],"niter"->OptionValue["niter"]]
 							]],
 							"formechanicalcalc"->OptionValue["formechanicalcalc"]

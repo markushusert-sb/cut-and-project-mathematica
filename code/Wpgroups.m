@@ -244,9 +244,9 @@ Select[(Print["assigned indices in ", #[[1]]]; #[[2]]) &[
       pointsfiltered, {depthlist[pointsfiltered] - 2}(*loop over vertices*)]]],DuplicateFreeQ],{depthlist[pointsfiltered] - 3(*loop over polygons*)}]}]
 quotientgeogen[na_Integer, nb_Integer, group_Association,nfundgeo :{{vecpattern..}..}]:=Function[list,{(denorm[#,group]&)/@ list[[1]],list[[2]]}][toindexform[N[(quotientpatternnorm[na,nb,group,#]&)/@ nfundgeo],"checkduplicates"->True]];
 quotientgeogenwindow[na_Integer, nb_Integer, group_Association,nfundgeo :{{vecpattern..}..},wind : polytopepattern,boundarylayers_]:=(
-		applyboundarylayers[N[restricttowind[wind,(quotientpattern[na,nb,group,#]&)/@ nfundgeo]],wind,boundarylayers]
+		applyboundarylayers[N[restricttowindow[wind,(quotientpattern[na,nb,group,#]&)/@ nfundgeo]],wind,boundarylayers]
 	);
-quotientgeogenwindowindex[na_Integer, nb_Integer, group_Association,nfundgeo :{{vecpattern..}..},wind : polytopepattern,boundarylayers_]:=(toindexform[applyboundarylayers[restricttowind[wind,(quotientpattern[na,nb,group,#]&)/@ nfundgeo],wind,boundarylayers],"checkduplicates"->True]);
+quotientgeogenwindowindex[na_Integer, nb_Integer, group_Association,nfundgeo :{{vecpattern..}..},wind : polytopepattern,boundarylayers_]:=(toindexform[applyboundarylayers[restricttowindow[wind,(quotientpattern[na,nb,group,#]&)/@ nfundgeo],wind,boundarylayers],"checkduplicates"->True]);
 
 quotientmeshgen[na_Integer, nb_Integer, group_Association,nfundmesh :{{vecpattern..}..},meshopts_:{}]:=Module[{val,idx},
 		{val,idx}=quotientgeogen[na,ng,group,nfundmesh];

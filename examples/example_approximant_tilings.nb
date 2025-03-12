@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[      6528,        187]
-NotebookOptionsPosition[      5728,        165]
-NotebookOutlinePosition[      6126,        181]
-CellTagsIndexPosition[      6083,        178]
+NotebookDataLength[      6623,        187]
+NotebookOptionsPosition[      5825,        165]
+NotebookOutlinePosition[      6222,        181]
+CellTagsIndexPosition[      6179,        178]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -37,9 +37,8 @@ Cell[BoxData[{
  RowBox[{"Needs", "[", "\"\<Windows`\>\"", "]"}]}], "Input",
  CellChangeTimes->{
   3.949380234922553*^9, {3.950124419189496*^9, 3.950124426607978*^9}, {
-   3.9501248881829348`*^9, 
-   3.950124892480419*^9}},ExpressionUUID->"93824db7-749e-44af-8b4c-\
-7cde92e64ebc"],
+   3.9501248881829348`*^9, 3.950124892480419*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"93824db7-749e-44af-8b4c-7cde92e64ebc"],
 
 Cell[CellGroupData[{
 
@@ -80,7 +79,7 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"tiling", "=", 
-   RowBox[{"restricttowind", "[", 
+   RowBox[{"restricttowindow", "[", 
     RowBox[{"window", ",", 
      RowBox[{"docandptilingsmasterphys", "[", 
       RowBox[{"candp", ",", "window", ",", 
@@ -99,8 +98,9 @@ Cell[BoxData[{
    3.949380333823505*^9, 3.9493804325953417`*^9}, {3.949380489674078*^9, 
    3.949380508097063*^9}, {3.949380547620256*^9, 3.949380581092664*^9}, {
    3.9493806824445963`*^9, 3.9493808191021357`*^9}, {3.949380856227562*^9, 
-   3.949380868166932*^9}, 3.949380950825308*^9},
- CellLabel->"In[5]:=",ExpressionUUID->"b3c65602-36bf-449c-8c02-ebcdc99fef25"]
+   3.949380868166932*^9}, 3.949380950825308*^9, {3.9507993872056637`*^9, 
+   3.950799387309436*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"b3c65602-36bf-449c-8c02-ebcdc99fef25"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -143,7 +143,7 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"tiling", "=", 
-   RowBox[{"restricttowind", "[", 
+   RowBox[{"restricttowindow", "[", 
     RowBox[{"window", ",", 
      RowBox[{"docandptilingsmasterphys", "[", 
       RowBox[{"candpbetter", ",", "window", ",", 
@@ -159,11 +159,11 @@ Cell[BoxData[{
     RowBox[{"Polygon", "[", "unitcellvertices", "]"}]}], "}"}], 
   "]"}]}], "Input",
  CellChangeTimes->{{3.949380635148143*^9, 3.9493806489261093`*^9}, {
-  3.949380907156844*^9, 3.949380946426464*^9}},
- CellLabel->"In[71]:=",ExpressionUUID->"b91883de-c239-4f8d-8ec4-26a015f297f4"]
+   3.949380907156844*^9, 3.949380946426464*^9}, 3.950799367900743*^9},
+ CellLabel->"In[15]:=",ExpressionUUID->"b91883de-c239-4f8d-8ec4-26a015f297f4"]
 }, Open  ]]
 },
-WindowSize->{606, 679.5},
+WindowSize->{1383, 855},
 WindowMargins->{{-2.25, Automatic}, {Automatic, -22.5}},
 FrontEndVersion->"14.1 for Linux x86 (64-bit) (July 16, 2024)",
 StyleDefinitions->"Default.nb",
@@ -180,14 +180,14 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[554, 20, 831, 21, 129, "Input",ExpressionUUID->"93824db7-749e-44af-8b4c-7cde92e64ebc"],
+Cell[554, 20, 848, 20, 89, "Input",ExpressionUUID->"93824db7-749e-44af-8b4c-7cde92e64ebc"],
 Cell[CellGroupData[{
-Cell[1410, 45, 177, 3, 65, "Section",ExpressionUUID->"a6ef5de7-51a7-4b6a-b7f0-37851b765d0e"],
-Cell[1590, 50, 2049, 52, 213, "Input",ExpressionUUID->"b3c65602-36bf-449c-8c02-ebcdc99fef25"]
+Cell[1427, 44, 177, 3, 65, "Section",ExpressionUUID->"a6ef5de7-51a7-4b6a-b7f0-37851b765d0e"],
+Cell[1607, 49, 2104, 53, 111, "Input",ExpressionUUID->"b3c65602-36bf-449c-8c02-ebcdc99fef25"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[3676, 107, 170, 3, 65, "Section",ExpressionUUID->"6b9eac15-10a3-4be8-8283-7291655aa017"],
-Cell[3849, 112, 1863, 50, 213, "Input",ExpressionUUID->"b91883de-c239-4f8d-8ec4-26a015f297f4"]
+Cell[3748, 107, 170, 3, 65, "Section",ExpressionUUID->"6b9eac15-10a3-4be8-8283-7291655aa017"],
+Cell[3921, 112, 1888, 50, 111, "Input",ExpressionUUID->"b91883de-c239-4f8d-8ec4-26a015f297f4"]
 }, Open  ]]
 }
 ]

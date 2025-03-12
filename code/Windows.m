@@ -1,14 +1,14 @@
 BeginPackage["Windows`"]
 (*by window i understand polytopes*)
-restricttowindfilled::usage="like restricttowind, but also raises error if the window is not completely filled with tiles"
+restricttowindowfilled::usage="like restricttowindow, but also raises error if the window is not completely filled with tiles"
 quadraticwindow::usage="quadraticwindow[sidelength] gives polytope of square of specified side length that is centered on the origin"
-restricttowind::usage="restricttowind[wind : polytopepattern, points_?formsQ] cuts of any parts of polygons described by forms which are outside of the specified window" 
+restricttowindow::usage="restricttowindow[wind : polytopepattern, points_?formsQ] cuts of any parts of polygons described by forms which are outside of the specified window" 
 unitwindow::usage="window [0,1]^2" 
 unitcellwindow::usage="unitcellwindow[{a,b}] gives unit cell for base vectors a and b" 
 sortwindowcounterclockwise::usage=""
 windowedgeintersect::usage=""
 reciprocalbase::usage="reciprocal base of vectors"
-restricttowindedges::usage=""
+restricttowindowedges::usage=""
 parallelogram::usage=""
 removeduplicateedges::usage=""
 splitconcavepolygon::usage="splitconcavepolygon[poly:{vecpattern..}] returns 2 elements:
@@ -201,7 +201,7 @@ reciprocalbase[vecs:{vecpattern,vecpattern}]:=Transpose[Inverse[vecs]]
 unitwindow={{{-1, 0}, 0}, {{0, -1}, 0}, {{1, 0}, 1}, {{0, 1}, 1}}
 unitcellwindow[basevecs:{vecpattern,vecpattern}, n_ : 1] := 
  Flatten[({{-#, 0}, {#, n}} &) /@ reciprocalbase[basevecs], 1]
-restricttowind[wind : polytopepattern,points_?formsQ] := ((*Print["restricting to window"];*)
+restricttowindow[wind : polytopepattern,points_?formsQ] := ((*Print["restricting to window"];*)
   Fold[restricttoedge[#2[[1]], #2[[2]], #1] &, points, Rationalize[wind]])
 checkfilledwindow[wind : polytopepattern, points_?formsQ]:=(
 	(*Print["checking for filled window"];*)
@@ -211,7 +211,7 @@ checkfilledwindow[wind : polytopepattern, points_?formsQ]:=(
     	Abs[signedArea[topolygon[wind]]](*area of window*)]]> 0.00001,
 		(Print[points];Throw["Exception: window not filled"])]
 )
-restricttowindfilled[wind : polytopepattern, points_?formsQ] := 
+restricttowindowfilled[wind : polytopepattern, points_?formsQ] := 
  Module[{result}, (*Print["restricting to window"];*)
   result = 
    Fold[restricttoedge[#2[[1]], #2[[2]], #1] &, points, 
@@ -279,7 +279,7 @@ Count[(#[[1]] . point < #[[2]] &) /@ wind, True] == Length[wind]
 )
 isinonwindow[wind : polytopepattern, point : vecpattern] :=(
  Count[(FullSimplify[(#[[1]] . point)-#[[2]]] <= 0  &) /@ wind, True] == Length[wind])
-restricttowindedges[window : polytopepattern,edges : {{Repeated[{Repeated[_?NumericQ, {2}]}, {2}]} ..}] :=(*edges specified as blocks {{x1,y1},{x2,y2}}, in this context, not edges of a window but of a tiling.*)
+restricttowindowedges[window : polytopepattern,edges : {{Repeated[{Repeated[_?NumericQ, {2}]}, {2}]} ..}] :=(*edges specified as blocks {{x1,y1},{x2,y2}}, in this context, not edges of a window but of a tiling.*)
  Module[{insideedgeflag},
   Fold[Function[{currentedges,
      windowedge}, (insideedgeflag =
