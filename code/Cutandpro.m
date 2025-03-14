@@ -256,14 +256,14 @@ docandptilingsmastercoronahyper[candp_Association, internalshift : vecpattern : 
 "canonical":>nthcorona[docandptilingshyper[candp,{},defaultshiftvector[candp,internalshift],"niter"->coronaorder],coronaorder],
 "general":>docandptilingssmarthyper[candp,{},defaultshiftvector[candp,internalshift],"niter"->coronaorder]
 }]
-Options[docandptilingsmasterhyper] = {"niter"->Infinity,"checkforfilledwindow"->True,"minimaltiling"->False,"hyperpointsfile"->"","neighbourhood"->Infinity};
+Options[docandptilingsmasterhyper] = {"niter"->Infinity,"checkforfilledwindow"->True,"minimaltiling"->True,"hyperpointsfile"->"","neighbourhood"->Infinity};
 docandptilingsmasterhyper[candp_Association, windowphysical : polytopepattern, internalshift : vecpattern : Null,OptionsPattern[]]:=Module[{phystiling,hypertiling},
 hypertiling=(If[OptionValue["niter"]!=Infinity,nthcorona[#,OptionValue["niter"]],#]&)[
 	docandptilingshyper[candp,windowphysical,defaultshiftvector[candp,internalshift],"niter"->OptionValue["niter"],"hyperpointsfile"->OptionValue["hyperpointsfile"]]
 ];
 checkandfiltertiling[candp,windowphysical,hypertiling,"checkforfilledwindow"->OptionValue["checkforfilledwindow"],"minimaltiling"->OptionValue["minimaltiling"]]
 ]
-Options[checkandfiltertiling]={"checkforfilledwindow"->True,"minimaltiling"->False};
+Options[checkandfiltertiling]={"checkforfilledwindow"->True,"minimaltiling"->True};
 checkandfiltertiling[candp_Association, windowphysical:polytopepattern,hypertiling:tilingpattern,OptionsPattern[]]:=Module[{phystiling,hypertilingmod,windowphysicalverts},
 	If[Length[windowphysical]>0,(
 		windowphysicalverts=topolygon[windowphysical];
@@ -287,7 +287,7 @@ checkandfiltertiling[candp_Association, windowphysical:polytopepattern,hypertili
 		hypertiling
 	]
 ]
-Options[docandptilingsmasterphys] = {"hyperpointsfile" -> "","neighbourhood"->Infinity,"niter"->Infinity,"checkforfilledwindow"->True,"minimaltiling"->False};
+Options[docandptilingsmasterphys] = {"hyperpointsfile" -> "","neighbourhood"->Infinity,"niter"->Infinity,"checkforfilledwindow"->True,"minimaltiling"->True};
 docandptilingsmasterphys[candp_Association, windowphysical : polytopepattern,internalshift : vecpattern : Null,OptionsPattern[]]:=tilingshypertophys[candp,docandptilingsmasterhyper[candp,windowphysical,internalshift,"checkforfilledwindow"->OptionValue["checkforfilledwindow"],"minimaltiling"->OptionValue["minimaltiling"],"neighbourhood"->OptionValue["neighbourhood"],"niter"->OptionValue["niter"],"hyperpointsfile"->OptionValue["hyperpointsfile"]]]
 hyperpointstohypertilingcanonical[candp_Association,hyperpoints:{vecpattern..}]:=(
 If[!DuplicateFreeQ[hyperpoints],Throw["List of hyperpoints contains duplicates"]];
